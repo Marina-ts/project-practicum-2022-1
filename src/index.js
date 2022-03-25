@@ -3,6 +3,10 @@ import Select from './components/select'
 import Accordion from "@/components/accordion";
 import MobileNav from "@/components/mobile-nav";
 import Nav from '@/components/nav';
+import getCatalogItems from "@/api/getCatalogItems";
+import Catalog from "@/components/catalog";
+import getFilterItems from "@/api/getFilterItems";
+import Filter from "@/components/filter";
 
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
@@ -12,7 +16,7 @@ if (document.readyState === 'loading') {
     init();
 }
 
-function init() {
+async function init() {
     new Nav('nav');
     const sortEl = document.getElementById('sort')
     const sortCallback = (item) => {
@@ -23,6 +27,10 @@ function init() {
         onChange: sortCallback,
         cookieName: 'catalog-sort'
     })
+
+    const filters = new Filter(document.getElementById('filter-items'))
+    const filterItems = await getFilterItems()
+    filters.renderFilters(filterItems)
 
     function filter() {
         const accordions = []
@@ -76,4 +84,11 @@ function init() {
             })
         })
     }
+
+    const catalog = new Catalog(document.getElementById('catalog-items'))
+
+    const catalogItems = await getCatalogItems()
+
+    catalog.renderItems(catalogItems)
+
 }

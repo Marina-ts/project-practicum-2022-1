@@ -75,59 +75,6 @@
   & > div {
     min-height: 200px;
   }
-
-  .catalog__bike{
-    padding: 16px;
-    box-sizing: border-box;
-    border: 1px solid #E9E9E9;
-    height: 408px;
-    border-radius: 2px;
-  }
-
-  .catalog__description{
-    font-style: normal;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 27px;
-    height: 56px;
-    color: #202020;
-    text-align: center;
-  }
-
-  .catalog__cost{
-    display: flex;
-    margin-left: 80px;
-    margin-top: 30px;
-  }
-
-  .catalog__price{
-    font-weight: 600;
-    font-style: normal;
-    font-size: 24px;
-    line-height: 28px;
-    color: #202020;
-    text-align: left;
-    width: 74px;
-    height: 28px;
-  }
-  
-  .catalog__ruble{
-    display: flex;
-    width: 15.45px;
-    height: 17px;
-    margin-top: 5px;
-    margin-left: 10px;
-  }
-  .catalog__card{
-    display: flex;
-    justify-content: space-between;
-  }
-  .catalog__likeicon{
-    height: 20px;
-  }
-  .catalog__basket{
-    height: 20px;
-  }
 }
 
 .catalog__but6{

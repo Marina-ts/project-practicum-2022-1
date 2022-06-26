@@ -48,8 +48,13 @@ export default class Select {
         this.headerText.innerText = name
         this.hide()
         
-        if (this.cookieName) {
+        // if (this.cookieName) {
+        //     Cookie.setCookie(this.cookieName, value)
+        // }
+        if (this.cookieName === 'catalog-sort') {
             Cookie.setCookie(this.cookieName, value)
+        } else if(this.cookieName === 'catalog-limit') {
+            Cookie.setCookie(this.cookieName, name)
         }
         
         if (this.onChange) {
